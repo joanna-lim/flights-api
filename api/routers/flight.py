@@ -20,7 +20,7 @@ def get_flight_no(flight_no:str, db:Session = Depends(get_db)):
     return flight.get_flight_no(flight_no, db)
 
 @router.get('/time/{epoch_time}', response_model=List[schemas.Flight]) 
-def get_flight_no(epoch_time:float, db:Session = Depends(get_db)):
+def get_time(epoch_time:float, db:Session = Depends(get_db)):
     return flight.get_time(epoch_time, db)
 
 @router.post('/', status_code=status.HTTP_201_CREATED) 
@@ -36,6 +36,6 @@ def delete_flight_no(flight_no:str, db:Session = Depends(get_db)):
     return flight.delete_flight_no(flight_no, db)
 
 @router.delete('/time/{epoch_time}', status_code = status.HTTP_204_NO_CONTENT)
-def delete_flight_no(epoch_time:float, db:Session = Depends(get_db)):
+def delete_time(epoch_time:float, db:Session = Depends(get_db)):
     return flight.delete_time(epoch_time, db)
 

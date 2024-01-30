@@ -27,7 +27,7 @@ def delete_flight(id:str, db:Session):
     flight = db.query(models.Flight).filter(models.Flight.id==id)
     if not flight.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail= f"Flight of {id} not found")
+                            detail= f"Flight of id {id} not found")
     flight.delete(synchronize_session=False)
     db.commit()
     return 'Deleted successfully'

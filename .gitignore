@@ -1,6 +1,6 @@
 venv
 __pycache__
-flights.db
-data
+database.db
+raw_data
 .vscode
 

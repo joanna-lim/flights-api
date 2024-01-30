@@ -11,3 +11,14 @@ class Flight(BaseModel):
     longitude: float
     class Config():
         orm_mode = True
+
+class Ship(BaseModel):
+    call_sign: str
+    epoch_time: float
+    speed_over_time: float
+    course_over_time: float
+    heading: float
+    latitude: float
+    longitude: float
+    class Config():
+        orm_mode = True
